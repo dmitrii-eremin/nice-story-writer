@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="working-area">
+            <header>
+                <div class="status-bar">
+                    <span>Time: <span class="current-time"></span></span>
+                    <span><a href="#" onclick="fullscreen()">[Fullscreen]</a></span>
+                    <span><a href="#" onclick="save()">[Save]</a></span>
+                    <span><a href="#" onclick="load()">[Load]</a></span>
+                </div>
+            </header>
+            <div class="main-editable-area">
+                <textarea class="editor"
+                          spellcheck="false"
+                          onkeydown="onTextAreaKeyDown(this, event)"></textarea>
+            </div>
+            <footer>
+                <div class="status-bar">
+                    <span>Words: <span class="amount-of-words"></span></span>
+                    <span>Pages: <span class="amount-of-pages"></span></span>
+                    <span>Lines: <span class="amount-of-lines"></span></span>
+                    <span>Paragraphs: <span class="amount-of-paragraphs"></span></span>
+                    <span>Characters: <span class="amount-of-characters"></span></span>
+                </div>
+            </footer>
+        </div>
+
+        <input class="input-file-reader-helper" type="file" name="inputfile" id="inputfile" onchange="onloadfile(this)">
+
+        <script src="app.js"></script>
+    </body>
+</html>
