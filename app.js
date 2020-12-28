@@ -55,6 +55,11 @@ function updateCounters() {
     updateInnerHtmlForClass("amount-of-characters", characters);
 }
 
+function makeFocus() {
+    var editor = document.getElementsByClassName("editor")[0];
+    editor.focus();
+}
+
 (function() {
     function updateTime() {
         var date = new Date();
@@ -63,6 +68,7 @@ function updateCounters() {
 
     updateTime();
     updateCounters();
+    makeFocus();
     setInterval(function() {
         updateTime();
     }, 1000);
