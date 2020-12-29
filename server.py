@@ -29,7 +29,7 @@ def get_note():
     fullpath = os.path.join(DATA_FOLDER, filename)
 
     text = ""
-    with open(fullpath) as f:
+    with open(fullpath, encoding="utf8") as f:
         text = f.read()
 
     output = {
@@ -46,7 +46,7 @@ def post_note():
 
     fullpath = os.path.join(DATA_FOLDER, filename)
 
-    with open(fullpath, "w") as f:
+    with open(fullpath, "w", encoding="utf8") as f:
         f.write(text)
 
     output = {
