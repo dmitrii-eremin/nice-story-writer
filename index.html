@@ -9,8 +9,13 @@
                 <div class="status-bar">
                     <span>Time: <span class="current-time"></span></span>
                     <span><a href="#" onclick="fullscreen()">[Fullscreen]</a></span>
-                    <span><a href="#" onclick="save()">[Save]</a></span>
-                    <span><a href="#" onclick="load()">[Load]</a></span>
+                    <span><a href="#" onclick="save()">[Download]</a></span>
+                    <span><a href="#" onclick="load()">[Upload]</a></span>
+                    <span><a href="#" onclick="newFile()">[New]</a></span>
+                    <span><a href="#" onclick="open_dialog('dialog-ip-address')">[Server IP]</a></span>
+                    <span><a class="only-when-server-ip-is-defined" href="#" onclick="load_from_server()">[Notes]</a></span>
+                    <span><a class="only-when-server-ip-is-defined" href="#" onclick="save_to_server()">[Save]</a></span>
+                    <span><a class="only-when-server-ip-is-defined" href="#" onclick="save_as_to_server()">[Save As]</a></span>
                 </div>
             </header>
             <div class="main-editable-area">
@@ -25,9 +30,51 @@
                     <span>Lines: <span class="amount-of-lines"></span></span>
                     <span>Paragraphs: <span class="amount-of-paragraphs"></span></span>
                     <span>Characters: <span class="amount-of-characters"></span></span>
+                    <span class="only-when-server-ip-is-defined">Server address: <span class="current-server-ip-status"></span></span>
+                    <span class="only-when-filename-is-defined">Filename: <span class="current-filename-status"></span></span>
                 </div>
             </footer>
         </div>
+
+        <dialog class="dialog-ip-address">
+            <div>
+                <span>IP Address:</span>
+                <input id="input-ip-address" type="text">
+            </div>
+            <table class="dialog-controls">
+                <tr>
+                    <td><a class="dialog-control-buttons" href="#" onclick="close_dialog('dialog-ip-address')">[Close]</a></td>
+                    <td class="right"><a class="dialog-control-buttons" href="#" onclick="save_ip_address('dialog-ip-address')">[Save]</a></td>
+                </tr>
+            </table>
+        </dialog>
+
+        <dialog class="dialog-load-file">
+            <div>
+                <select id="server-files-list">
+                </select>
+            </div>
+            <table class="dialog-controls">
+                <tr>
+                    <td><a class="dialog-control-buttons" href="#" onclick="close_dialog('dialog-load-file')">[Close]</a></td>
+                    <td class="center"><a class="dialog-control-buttons" href="#" onclick="delete_file_from_server()">[Delete]</a></td>
+                    <td class="right"><a class="dialog-control-buttons" href="#" onclick="load_file_from_server()">[Load]</a></td>
+                </tr>
+            </table>
+        </dialog>
+
+        <dialog class="dialog-save-as">
+            <div>
+                <span>Filename:</span>
+                <input id="input-filename" type="text">
+            </div>
+            <table class="dialog-controls">
+                <tr>
+                    <td><a class="dialog-control-buttons" href="#" onclick="close_dialog('dialog-save-as')">[Close]</a></td>
+                    <td class="right"><a class="dialog-control-buttons" href="#" onclick="save_file_from_dialog('dialog-save-as')">[Save]</a></td>
+                </tr>
+            </table>
+        </dialog>
 
         <input class="input-file-reader-helper" type="file" name="inputfile" id="inputfile" onchange="onloadfile(this)">
 

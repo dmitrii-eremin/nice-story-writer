@@ -38,6 +38,60 @@ footer span:not(:first-child), header span:not(:first-child)
     margin-left: 3rem;
 }
 
+dialog
+{
+    background-color: #404040;
+    font-family: "Hack", "Courier New", "monospace";
+    font-size: 1rem;
+    color: #B3A000;
+}
+
+.dialog-ip-address input
+{
+    margin-left: 3rem;
+}
+
+.dialog-load-file
+{
+    width: 20rem;
+}
+
+.dialog-load-file select
+{
+    background: #404040;
+    width: 100%;
+    font-family: "Hack", "Courier New", "monospace";
+    font-size: 1rem;
+    color: #B3A000;
+}
+
+.dialog-control-buttons
+{
+    color: #B3A000;
+    text-decoration: none;
+}
+
+.dialog-controls
+{
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.dialog-controls .right
+{
+    text-align: right;
+}
+
+.dialog-controls .center
+{
+    text-align: center;
+}
+
+.only-when-server-ip-is-defined, .only-when-filename-is-defined
+{
+    display: none;
+}
+
 .working-area
 {
     padding-top: 2rem;
@@ -85,7 +139,7 @@ footer span:not(:first-child), header span:not(:first-child)
     background: black;
     color: #B3A000;
     font-family: "Hack", "Courier New", "monospace";
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     width: 100%;
     height: 100%;
     border-style: none;
